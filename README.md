@@ -1,16 +1,3 @@
-# Stack Kata
-
-## Objectives
-Using TDD implement a stack (dont' use the Java stack class) with the following methods:
-
-<pre><code>    int size();
-    void push(int i);
-    int pop();
-    int peek();
-    boolean isEmpty();</code></pre>
-
-Refactor the Stack and JUNit tests to make the Stack generic so that I can have a stack of strings, ints, etc.
-
 ## Getting Started
 1) Clone the repo
 2) <pre><code>gradlew cleanIdea idea</code></pre>
