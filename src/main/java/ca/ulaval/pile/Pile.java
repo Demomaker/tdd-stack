@@ -2,7 +2,13 @@ package ca.ulaval.pile;
 
 public class Pile {
 
+    private boolean empty = true;
+
     public boolean isEmpty() {
-        return true;
+        return empty;
+    }
+
+    public void push() {
+      empty = false;
     }
 }
