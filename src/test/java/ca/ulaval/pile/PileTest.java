@@ -20,5 +20,16 @@ public class PileTest {
     
     assertFalse(pile.isEmpty());
   }
-  
+
+
+  @Test
+  public void givenAStackWithOneElement_whenPopping_thenStackShouldBeEmpty() {
+    Pile pile = new Pile();
+
+    pile.push();
+
+    pile.pop();
+
+    assertTrue(pile.isEmpty());
+  }
 }

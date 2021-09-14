@@ -11,4 +11,8 @@ public class Pile {
     public void push() {
       empty = false;
     }
+
+    public void pop() {
+      empty = true;
+    }
 }
