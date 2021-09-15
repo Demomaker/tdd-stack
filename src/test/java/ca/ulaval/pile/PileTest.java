@@ -7,7 +7,10 @@ import org.junit.Test;
 public class PileTest {
 
   @Test
-  public void test() {
+  public void givenNewStack_thenShouldBeEmpty() {
+    Pile pile = new Pile();
+
+    assertTrue(pile.isEmpty());
   }
   
 }
