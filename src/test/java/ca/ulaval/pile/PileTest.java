@@ -7,7 +7,7 @@ import org.junit.Test;
 public class PileTest {
 
   @Test
-  public void givenNewStack_thenShouldBeEmpty() {
+  public void shouldBeEmpty() {
     Pile pile = new Pile();
     assertTrue(pile.isEmpty());
   }
@@ -15,10 +15,17 @@ public class PileTest {
   @Test
   public void whenPush_shouldAddTheElement() {
     Pile pile = new Pile();
-    
     pile.push();
-    
     assertFalse(pile.isEmpty());
   }
-  
+
+  @Test
+  public void givenPushedAnElement_whenPopping_shouldBeEmpty() {
+    Pile pile = new Pile();
+    pile.push();
+
+    pile.pop();
+
+    assertTrue(pile.isEmpty());
+  }
 }
