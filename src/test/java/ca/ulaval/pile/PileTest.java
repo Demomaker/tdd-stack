@@ -35,8 +35,34 @@ public class PileTest {
 
   @Test
   public void givenAnElementPushed_whenPopping_shouldReturnTheElement() {
-    stack.push(AN_ELEMENT);
+    int THE_ELEMENT = 42;
+    stack.push(THE_ELEMENT);
+
     int elementReturned = stack.pop();
-    assertEquals(AN_ELEMENT, elementReturned);
+
+    assertEquals(THE_ELEMENT, elementReturned);
+  }
+
+  @Test
+  public void givenMultipleElements_whenPopping_shouldReturnTheLastElement() {
+    int THE_ELEMENT = 42;
+    stack.push(AN_ELEMENT);
+    stack.push(THE_ELEMENT);
+
+    int theElementReturned = stack.pop();
+
+    assertEquals(THE_ELEMENT, theElementReturned);
+  }
+
+  @Test
+  public void givenTwoElements_whenPoppingTwice_shouldReturnFirstElement() {
+    int THE_ELEMENT = 42;
+    stack.push(THE_ELEMENT);
+    stack.push(AN_ELEMENT);
+
+    stack.pop();
+    int theElementReturned = stack.pop();
+
+    assertEquals(THE_ELEMENT, theElementReturned);
   }
 }

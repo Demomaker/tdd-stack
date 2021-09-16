@@ -1,21 +1,24 @@
 package ca.ulaval.pile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pile {
 
   private boolean empty = true;
-  private int element;
+  private List<Integer> list = new ArrayList();
 
   public boolean isEmpty() {
     return empty;
   }
 
   public void push(int element) {
-    this.element = element;
+    list.add(element);
     empty = false;
   }
 
   public int pop() {
     empty = true;
-    return element;
+    return list.remove(list.size() - 1);
   }
 }
