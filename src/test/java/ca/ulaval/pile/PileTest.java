@@ -2,30 +2,41 @@ package ca.ulaval.pile;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PileTest {
 
+  private static final int AN_ELEMENT = 32;
+  private Pile stack;
+
+  @Before
+  public void givenAnEmptyStack() {
+    stack = new Pile();
+  }
+
   @Test
   public void shouldBeEmpty() {
-    Pile pile = new Pile();
-    assertTrue(pile.isEmpty());
-  }
-  
-  @Test
-  public void whenPush_shouldAddTheElement() {
-    Pile pile = new Pile();
-    pile.push();
-    assertFalse(pile.isEmpty());
+    assertTrue(stack.isEmpty());
   }
 
   @Test
-  public void givenPushedAnElement_whenPopping_shouldBeEmpty() {
-    Pile pile = new Pile();
-    pile.push();
+  public void whenPush_shouldAcceptTheElement() {
+    stack.push(AN_ELEMENT);
+    assertFalse(stack.isEmpty());
+  }
 
-    pile.pop();
+  @Test
+  public void givenAnElementPushed_whenPopping_shouldRemoveTheElement() {
+    stack.push(AN_ELEMENT);
+    stack.pop();
+    assertTrue(stack.isEmpty());
+  }
 
-    assertTrue(pile.isEmpty());
+  @Test
+  public void givenAnElementPushed_whenPopping_shouldReturnTheElement() {
+    stack.push(AN_ELEMENT);
+    int elementReturned = stack.pop();
+    assertEquals(AN_ELEMENT, elementReturned);
   }
 }
